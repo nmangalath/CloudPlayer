@@ -714,7 +714,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             int j = ds.checked_positions.get(i);
             mAdapter.pf.playAdapter.toggleChecked(j);
         }
-        ds.player_state = "stopped";
         ds.playlist_selected.clear();
         ds.checked_positions.clear();
         ds.song_index = 0;
@@ -728,6 +727,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         if(ds.player_state.equals("playing") || ds.player_state.equals("paused")) {
             musicSrv.stopSong();
         }
+        ds.player_state = "stopped";
     }
 
     public static MainActivity getInstance(){
